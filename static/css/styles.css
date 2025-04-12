@@ -1,0 +1,577 @@
+/* Base styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, "Segoe UI", sans-serif;
+    height: 100%;
+    background-color: #f5f5f5;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Header styles */
+.header {
+    padding: 15px 20px;
+    background-color: #4a6fa5;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+/* Chat container styles */
+.chat-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+}
+
+.messages-container {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    background-color: #f0f4f8;
+}
+
+/* Message styles */
+.message {
+    max-width: 80%;
+    margin-bottom: 15px;
+    padding: 12px 16px;
+    border-radius: 15px;
+    position: relative;
+    clear: both;
+    animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.message-user {
+    background-color: #e9edf5;
+    color: #333;
+    float: right;
+    border-bottom-right-radius: 5px;
+    margin-left: 20%;
+}
+
+.message-bot {
+    background-color: white;
+    color: #333;
+    float: left;
+    border-bottom-left-radius: 5px;
+    margin-right: 20%;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.message-content {
+    word-wrap: break-word;
+    line-height: 1.5;
+}
+
+.message-time {
+    font-size: 11px;
+    color: #888;
+    text-align: right;
+    margin-top: 5px;
+}
+
+/* Menu sections */
+.menu-section {
+    margin-bottom: 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.menu-section > div:first-child {
+    background-color: #f0f4f8;
+    padding: 8px 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.menu-section > div:last-child {
+    padding: 10px 15px;
+    font-size: 14px;
+}
+
+/* Input area styles */
+.input-container {
+    padding: 15px;
+    background-color: white;
+    border-top: 1px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+}
+
+.message-form {
+    display: flex;
+    width: 100%;
+}
+
+.message-input {
+    flex: 1;
+    padding: 12px 15px;
+    border: 1px solid #d0d0d0;
+    border-radius: 24px;
+    outline: none;
+    font-size: 16px;
+}
+
+.message-input:focus {
+    border-color: #4a6fa5;
+    box-shadow: 0 0 0 2px rgba(74, 111, 165, 0.2);
+}
+
+.send-button {
+    background-color: #4a6fa5;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    margin-left: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+}
+
+.send-button:hover {
+    background-color: #3a5d8f;
+}
+
+.send-button:disabled {
+    background-color: #b0b0b0;
+    cursor: not-allowed;
+}
+
+/* Loading indicator */
+.typing-indicator {
+    display: flex;
+    padding: 12px 16px;
+    background-color: white;
+    border-radius: 15px;
+    max-width: 100px;
+    margin-bottom: 15px;
+    float: left;
+    clear: both;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    background-color: #b0b0b0;
+    border-radius: 50%;
+    margin: 0 3px;
+    animation: bounce 1.3s linear infinite;
+}
+
+.dot:nth-child(2) {
+    animation-delay: -1.1s;
+}
+
+.dot:nth-child(3) {
+    animation-delay: -0.9s;
+}
+
+@keyframes bounce {
+    0%, 60%, 100% {
+        transform: translateY(0);
+    }
+    30% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Invoice and ledger tables */
+.financial-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+.financial-table th {
+    background-color: #f0f4f8;
+    text-align: left;
+    padding: 8px;
+    font-weight: 600;
+}
+
+.financial-table td {
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+}
+
+.invoice-header {
+    margin-bottom: 15px;
+}
+
+.invoice-total {
+    font-weight: bold;
+    color: #4a6fa5;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .message {
+        max-width: 90%;
+    }
+    
+    .header h1 {
+        font-size: 18px;
+    }
+}
+/* Quick actions styling */
+.quick-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+}
+
+.quick-action-btn {
+    padding: 8px 12px;
+    background-color: #f0f4f8;
+    border: 1px solid #d0d0d0;
+    border-radius: 18px;
+    color: #4a6fa5;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+    font-weight: 500;
+}
+
+.quick-action-btn:hover {
+    background-color: #e1e8f0;
+    border-color: #4a6fa5;
+}
+
+.help-btn {
+    background-color: #e9edf5;
+    color: #3a5d8f;
+}
+
+/* Toast notification styling */
+.toast-notification {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4a6fa5;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    animation: slideUp 0.3s, fadeOut 0.5s 2.5s forwards;
+}
+
+.toast-notification.success {
+    background-color: #4caf50;
+}
+
+.toast-notification.error {
+    background-color: #f44336;
+}
+
+.toast-notification i {
+    font-size: 20px;
+}
+
+@keyframes slideUp {
+    from { transform: translate(-50%, 20px); opacity: 0; }
+    to { transform: translate(-50%, 0); opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; visibility: hidden; }
+}
+
+/* Success indicator for completed tasks */
+.success-indicator {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background-color: #4caf50;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 18px;
+    margin-right: 5px;
+    font-size: 12px;
+}
+
+/* Add subtle hover effect to messages */
+.message:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Improved tables for financial data */
+.financial-table {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.financial-table th {
+    background-color: #4a6fa5;
+    color: white;
+    font-weight: 500;
+}
+
+.financial-table tr:nth-child(even) {
+    background-color: #f9fafb;
+}
+
+/* Chart and data visualization containers */
+.chart-container {
+    margin: 20px 0;
+    background-color: white;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    height: 300px; /* Fixed height for consistent charts */
+}
+
+/* Transaction details styling */
+.transactions-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+    font-size: 14px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.transactions-table th {
+    background-color: #4a6fa5;
+    color: white;
+    text-align: left;
+    padding: 8px;
+    font-weight: 500;
+}
+
+.transactions-table td {
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+}
+
+.transactions-table tr:hover {
+    background-color: #f5f7fa;
+}
+
+/* Toggle buttons for collapsible sections */
+.toggle-button {
+    background-color: #128C7E;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    font-weight: 500;
+    position: relative;
+    transition: background-color 0.2s;
+}
+
+.toggle-button:hover {
+    background-color: #0d7066;
+}
+
+.toggle-button::after {
+    content: '▼';
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 12px;
+}
+
+.toggle-button.active::after {
+    content: '▲';
+}
+
+/* Collapsible section */
+.collapsible-section {
+    display: none;
+    margin-top: 10px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    padding: 15px;
+    background-color: white;
+}
+
+/* Summary elements styling */
+.summary-total {
+    font-size: 18px;
+    font-weight: bold;
+    color: #4a6fa5;
+    margin: 15px 0;
+    text-align: center;
+}
+
+.summary-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+}
+
+.summary-table th {
+    background-color: #f0f4f8;
+    padding: 8px;
+    text-align: left;
+    border-bottom: 2px solid #ddd;
+}
+
+.summary-table td {
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+}
+
+.summary-table tr:last-child td {
+    font-weight: bold;
+    border-top: 2px solid #ddd;
+    border-bottom: none;
+}
+
+/* Chart and data visualization containers */
+.chart-container {
+    margin: 20px 0;
+    background-color: white;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    height: 300px; /* Fixed height for consistent charts */
+}
+
+/* Transaction details styling */
+.transactions-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+    font-size: 14px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.transactions-table th {
+    background-color: #4a6fa5;
+    color: white;
+    text-align: left;
+    padding: 8px;
+    font-weight: 500;
+}
+
+.transactions-table td {
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+}
+
+.transactions-table tr:hover {
+    background-color: #f5f7fa;
+}
+
+/* Toggle buttons for collapsible sections */
+.toggle-button {
+    background-color: #128C7E;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    font-weight: 500;
+    position: relative;
+    transition: background-color 0.2s;
+}
+
+.toggle-button:hover {
+    background-color: #0d7066;
+}
+
+.toggle-button::after {
+    content: '▼';
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 12px;
+}
+
+.toggle-button.active::after {
+    content: '▲';
+}
+
+/* Collapsible section */
+.collapsible-section {
+    display: none;
+    margin-top: 10px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    padding: 15px;
+    background-color: white;
+}
+
+/* Summary elements styling */
+.summary-total {
+    font-size: 18px;
+    font-weight: bold;
+    color: #4a6fa5;
+    margin: 15px 0;
+    text-align: center;
+}
+
+.summary-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+}
+
+.summary-table th {
+    background-color: #f0f4f8;
+    padding: 8px;
+    text-align: left;
+    border-bottom: 2px solid #ddd;
+}
+
+.summary-table td {
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+}
+
+.summary-table tr:last-child td {
+    font-weight: bold;
+    border-top: 2px solid #ddd;
+    border-bottom: none;
+}

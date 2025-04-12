@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Munim AI - Business Accounting Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Chart.js for visualizations -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <meta name="description" content="Munim AI - WhatsApp-style chat interface for small business accounting">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1><i class="fas fa-calculator"></i> Munim AI</h1>
+        </div>
+        
+        <!-- Chat container -->
+        <div class="chat-container">
+            <!-- Messages will be dynamically added here -->
+            <div class="messages-container">
+                <!-- Generated via JS -->
+            </div>
+            
+            <!-- Input form -->
+            <div class="input-container">
+                <form class="message-form">
+                    <input 
+                        type="text" 
+                        class="message-input" 
+                        placeholder="Type a message or say 'menu'..." 
+                        autocomplete="off"
+                    >
+                    <button type="submit" class="send-button" disabled>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+</body>
+</html>

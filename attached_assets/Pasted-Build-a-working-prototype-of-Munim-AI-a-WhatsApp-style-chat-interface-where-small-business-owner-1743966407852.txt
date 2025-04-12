@@ -1,0 +1,83 @@
+Build a working prototype of "Munim AI" — a WhatsApp-style chat interface where small business owners can manage their day-to-day accounting needs *just by chatting*.
+
+This is a beta prototype to test core features like invoices, expenses, payments, and ledgers using a simple natural language style.
+
+---
+
+🛠 Tech Stack:
+- Frontend: HTML, CSS, JavaScript (a clean, mobile-friendly chatbot UI with user input + bot replies)
+- Backend: Python with Flask
+- Storage: JSON file (for storing expenses, income, invoices, ledgers per contact/business)
+- Hosting: Replit
+
+---
+
+✨ Features to Build:
+
+1. **Chat-style Command Recognition (Text Input)**
+   Users type natural messages like:
+   - `invoice to Ramesh ₹2000 for website design`
+   - `record expense ₹450 chai stall`
+   - `payment ₹1500 received from Rahul`
+   - `show ledger of Rahul`
+   - `send invoice to xyz@gmail.com`
+   - `send ledger of Ramesh`
+
+2. **Invoice Creation**
+   - Store date, amount, reason, recipient name
+   - Store as JSON object under `invoices`
+   - Response: “Invoice to Ramesh for ₹2000 recorded for website design.”
+
+3. **Expense/Income Recording**
+   - Recognize if user says "expense", "paid", or "received"
+   - Log into JSON under `transactions` with:
+     - type: expense/income
+     - name
+     - amount
+     - date
+     - category or reason (optional)
+
+4. **Ledger Maintenance**
+   - Maintain a dynamic ledger per contact
+   - Total balance owed or received per person/business
+   - On command: `show ledger of Ramesh`, show a chat reply:
+     ```
+     Ledger for Ramesh:
+     - Invoice: ₹2000 for design (2 Apr)
+     - Payment Received: ₹1000 (3 Apr)
+     Balance: ₹1000 receivable
+     ```
+
+5. **Send Ledger or Invoice**
+   - Simulate sending via message like:
+     “Invoice PDF has been sent to xyz@gmail.com”
+     (no real email for now)
+
+6. **Simple UI**
+   - Left: User messages
+   - Right: Bot replies
+   - Auto-scroll and chat bubbles like WhatsApp
+   - A fixed input at bottom
+
+7. **Extras (Optional but useful)**
+   - Show daily/weekly summaries on command
+   - Store everything in JSON files:
+     - `users.json`
+     - `ledgers.json`
+     - `transactions.json`
+     - `invoices.json`
+
+---
+
+Design Requirements:
+- Mobile-first
+- Clean fonts
+- Scrollable chat window
+- Bot should respond quickly
+- Each message shows timestamp
+
+---
+
+This is a prototype, so focus more on logic than full backend architecture. Just simulate replies and maintain accuracy of entries.
+
+Everything must feel like a natural WhatsApp chat — no buttons or dropdowns needed. Only input is chat box.

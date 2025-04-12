@@ -1,0 +1,259 @@
+{
+    "transactions": [
+        {
+            "id": "transaction_20250406191706",
+            "type": "expense",
+            "name": null,
+            "amount": 450.0,
+            "category": "chai stall",
+            "date": "2025-04-06 19:17:06"
+        },
+        {
+            "id": "transaction_20250406191717",
+            "type": "expense",
+            "name": null,
+            "amount": 450.0,
+            "category": "chai stall",
+            "date": "2025-04-06 19:17:17"
+        },
+        {
+            "id": "transaction_20250406191912",
+            "type": "income",
+            "name": "Rahul",
+            "amount": 1500.0,
+            "category": "payment",
+            "date": "2025-04-06 19:19:12"
+        },
+        {
+            "id": "transaction_20250406191940",
+            "type": "income",
+            "name": "Ramesh",
+            "amount": 1500.0,
+            "category": "payment",
+            "date": "2025-04-06 19:19:40"
+        },
+        {
+            "id": "transaction_20250406192508",
+            "type": "income",
+            "name": "Rahul",
+            "amount": 1500.0,
+            "category": "payment",
+            "date": "2025-04-06 19:25:08"
+        },
+        {
+            "id": "transaction_20250406192520",
+            "type": "income",
+            "name": "Rahul",
+            "amount": 1500.0,
+            "category": "payment",
+            "date": "2025-04-06 19:25:20"
+        },
+        {
+            "id": "transaction_20250406192541",
+            "type": "expense",
+            "name": null,
+            "amount": 450.0,
+            "category": "chai stall",
+            "date": "2025-04-06 19:25:41"
+        },
+        {
+            "id": "transaction_20250406192558",
+            "type": "expense",
+            "name": null,
+            "amount": 4500.0,
+            "category": "for stationary",
+            "date": "2025-04-06 19:25:58"
+        },
+        {
+            "id": "transaction_20250407054908",
+            "type": "expense",
+            "name": null,
+            "amount": 450.0,
+            "category": "chai stall",
+            "date": "2025-04-07 05:49:08"
+        },
+        {
+            "id": "transaction_20250407062023",
+            "type": "expense",
+            "name": null,
+            "amount": 450.0,
+            "category": "chai stal",
+            "date": "2025-04-07 06:20:23"
+        },
+        {
+            "id": "transaction_20250407062025",
+            "type": "expense",
+            "name": null,
+            "amount": 450.0,
+            "category": "chai stal",
+            "date": "2025-04-07 06:20:25"
+        },
+        {
+            "id": "transaction_20250407063542",
+            "type": "expense",
+            "amount": 1500.0,
+            "date": "2025-04-06 00:00:00",
+            "category": "stationary"
+        },
+        {
+            "id": "transaction_20250407065542",
+            "type": "expense",
+            "amount": 500.0,
+            "date": "2025-04-07 06:55:42",
+            "category": "on office supplies"
+        },
+        {
+            "id": "transaction_20250407075108",
+            "type": "expense",
+            "amount": 29000.0,
+            "date": "2025-03-13 00:00:00",
+            "name": "Bharat",
+            "category": "Salary",
+            "notes": "Nope"
+        },
+        {
+            "id": "transaction_20250407075224",
+            "type": "income",
+            "amount": 20000.0,
+            "date": "2025-04-07 07:52:24",
+            "name": "XYZ Ltd for website work",
+            "category": "website work"
+        },
+        {
+            "id": "transaction_20250407083232",
+            "type": "expense",
+            "amount": 14560.0,
+            "date": "2025-02-02 00:00:00",
+            "name": "Travel Agency",
+            "category": "Travel",
+            "notes": "Nope"
+        },
+        {
+            "id": "transaction_20250407085042",
+            "type": "expense",
+            "amount": 12000.0,
+            "date": "2025-04-07 00:00:00",
+            "name": "Joyus",
+            "category": "Stationary",
+            "notes": "Nop"
+        },
+        {
+            "id": "transaction_20250407143622",
+            "type": "income",
+            "amount": 50000.0,
+            "date": "2025-04-05 00:00:00",
+            "name": "JI",
+            "category": "Purchase"
+        },
+        {
+            "id": "transaction_20250407143624",
+            "type": "expense",
+            "amount": 500.0,
+            "date": "2025-04-07 00:00:00",
+            "category": "Travel"
+        },
+        {
+            "id": "transaction_20250408175246",
+            "type": "expense",
+            "amount": 35000.0,
+            "date": "2025-04-08 00:00:00",
+            "name": "Trifecta starlight",
+            "category": "Rent"
+        },
+        {
+            "id": "transaction_20250408175320",
+            "type": "income",
+            "amount": 72820.0,
+            "date": "2025-04-08 17:53:20",
+            "name": "Suhana masala yesterday",
+            "category": "payment"
+        },
+        {
+            "id": "transaction_20250408175406",
+            "type": "income",
+            "amount": 1078780.0,
+            "date": "2025-04-08 17:54:06",
+            "name": "Hindustan Unilever Ltd on",
+            "category": "payment"
+        },
+        {
+            "id": "transaction_20250408175437",
+            "type": "expense",
+            "amount": 1450.0,
+            "date": "2025-04-08 17:54:37",
+            "name": "paid",
+            "category": "snacks at metro wholesale"
+        },
+        {
+            "id": "transaction_20250409153919",
+            "type": "expense",
+            "amount": 1500.0,
+            "date": "2025-04-09 00:00:00",
+            "name": "Prashant",
+            "category": "Personal",
+            "notes": "Udhaar"
+        },
+        {
+            "id": "transaction_20250409154013",
+            "type": "expense",
+            "amount": 2000.0,
+            "date": "2025-04-09 15:40:13",
+            "category": "Miscellaneous"
+        },
+        {
+            "id": "transaction_20250409154036",
+            "type": "expense",
+            "amount": 1500.0,
+            "date": "2025-04-09 15:40:36",
+            "category": "Miscellaneous"
+        },
+        {
+            "id": "transaction_20250412174114",
+            "type": "income",
+            "amount": 20000.0,
+            "date": "2025-04-12 17:41:14",
+            "name": "XYZ Ltd for website work",
+            "category": "website work\""
+        },
+        {
+            "id": "transaction_20250412174118",
+            "type": "income",
+            "amount": 20000.0,
+            "date": "2025-04-12 17:41:18",
+            "name": "XYZ Ltd for website work",
+            "category": "website work\""
+        },
+        {
+            "id": "transaction_20250412174119",
+            "type": "income",
+            "amount": 20000.0,
+            "date": "2025-04-12 17:41:19",
+            "name": "XYZ Ltd for website work",
+            "category": "website work\""
+        },
+        {
+            "id": "transaction_20250412174207",
+            "type": "income",
+            "amount": 20000.0,
+            "date": "2025-04-12 17:42:07",
+            "name": "XYZ Ltd for website work",
+            "category": "website work\""
+        },
+        {
+            "id": "transaction_20250412174350",
+            "type": "income",
+            "amount": 51000.0,
+            "date": "2025-04-12 00:00:00",
+            "name": "Krunal Shah",
+            "category": "Purchase"
+        },
+        {
+            "id": "transaction_20250412174540",
+            "type": "income",
+            "amount": 9180.0,
+            "date": "2025-04-12 00:00:00",
+            "name": "Krunal Shah",
+            "category": "Invoice"
+        }
+    ]
+}

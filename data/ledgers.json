@@ -1,0 +1,514 @@
+{
+    "ledgers": {
+        "Ramesh": {
+            "entries": [
+                {
+                    "type": "invoice",
+                    "amount": 2000.0,
+                    "reason": "for website design",
+                    "date": "2025-04-06 19:15:17"
+                },
+                {
+                    "type": "payment",
+                    "amount": 1500.0,
+                    "reason": "payment",
+                    "date": "2025-04-06 19:19:40"
+                },
+                {
+                    "type": "invoice",
+                    "amount": 2360.0,
+                    "reason": "for website design",
+                    "date": "2025-04-06 19:30:19"
+                },
+                {
+                    "type": "invoice",
+                    "amount": 2360.0,
+                    "reason": "for website design",
+                    "date": "2025-04-07 05:45:07"
+                },
+                {
+                    "type": "invoice",
+                    "amount": 2360.0,
+                    "reason": "invoice to Ramesh",
+                    "date": "2025-04-07 05:48:20"
+                },
+                {
+                    "type": "invoice",
+                    "amount": 2360.0,
+                    "reason": "invoice to Ramesh",
+                    "date": "2025-04-07 05:52:45"
+                },
+                {
+                    "type": "invoice",
+                    "amount": 2360.0,
+                    "reason": "Professional Services",
+                    "date": "2025-04-07 06:19:37"
+                }
+            ],
+            "balance": 12300.0
+        },
+        "Rahul": {
+            "entries": [
+                {
+                    "type": "payment",
+                    "amount": 1500.0,
+                    "reason": "payment",
+                    "date": "2025-04-06 19:19:12"
+                },
+                {
+                    "type": "payment",
+                    "amount": 1500.0,
+                    "reason": "payment",
+                    "date": "2025-04-06 19:25:08"
+                },
+                {
+                    "type": "payment",
+                    "amount": 1500.0,
+                    "reason": "payment",
+                    "date": "2025-04-06 19:25:20"
+                },
+                {
+                    "type": "invoice",
+                    "amount": 9440.0,
+                    "reason": "for website design",
+                    "date": "2025-04-06 19:30:54"
+                }
+            ],
+            "balance": 4940.0
+        },
+        "Ramesh with marketing": {
+            "entries": [
+                {
+                    "type": "invoice",
+                    "amount": 2360.0,
+                    "reason": "Multiple items",
+                    "date": "2025-04-07 05:50:44"
+                }
+            ],
+            "balance": 2360.0
+        },
+        "ABC Company for": {
+            "entries": [
+                {
+                    "type": "invoice",
+                    "amount": 5900.0,
+                    "reason": "create invoice to ABC Company for",
+                    "date": "2025-04-07 06:05:23"
+                }
+            ],
+            "balance": 5900.0
+        },
+        "ABC Company": {
+            "entries": [
+                {
+                    "type": "invoice",
+                    "amount": 5900.0,
+                    "reason": "create invoice to ABC Company for",
+                    "date": "2025-04-07 06:06:07"
+                },
+                {
+                    "type": "invoice",
+                    "amount": 5900.0,
+                    "reason": "create invoice to ABC Company for",
+                    "date": "2025-04-07 06:06:25"
+                }
+            ],
+            "balance": 11800.0
+        },
+        "Test Company": {
+            "entries": [
+                {
+                    "type": "invoice",
+                    "amount": 11800.0,
+                    "reason": "create invoice to Test Company for",
+                    "date": "2025-04-07 06:06:43"
+                },
+                {
+                    "type": "invoice",
+                    "amount": 11800.0,
+                    "reason": "create invoice to Test Company for",
+                    "date": "2025-04-07 06:06:47"
+                }
+            ],
+            "balance": 23600.0
+        },
+        "XYZ Corp": {
+            "entries": [
+                {
+                    "type": "invoice",
+                    "amount": 17700.0,
+                    "reason": "create invoice to XYZ Corp for",
+                    "date": "2025-04-07 06:07:09"
+                },
+                {
+                    "type": "invoice",
+                    "amount": 17700.0,
+                    "reason": "create invoice to XYZ Corp for",
+                    "date": "2025-04-07 06:08:17"
+                },
+                {
+                    "type": "invoice",
+                    "amount": 17700.0,
+                    "reason": "create invoice to XYZ Corp for",
+                    "date": "2025-04-07 06:08:35"
+                },
+                {
+                    "type": "invoice",
+                    "amount": 17700.0,
+                    "reason": "Professional Services",
+                    "date": "2025-04-07 06:10:01"
+                }
+            ],
+            "balance": 70800.0
+        },
+        "ABC Corp": {
+            "entries": [
+                {
+                    "type": "invoice",
+                    "amount": 11800.0,
+                    "reason": "Professional Services",
+                    "date": "2025-04-07 06:10:12"
+                },
+                {
+                    "type": "invoice",
+                    "amount": 11800.0,
+                    "reason": "Professional Services",
+                    "date": "2025-04-07 06:11:04"
+                },
+                {
+                    "type": "invoice",
+                    "amount": 11800.0,
+                    "reason": "Professional Services",
+                    "date": "2025-04-07 06:11:48"
+                },
+                {
+                    "type": "invoice",
+                    "amount": 11800.0,
+                    "reason": "Professional Services",
+                    "date": "2025-04-07 06:12:24"
+                },
+                {
+                    "type": "invoice",
+                    "amount": 11800.0,
+                    "reason": "Professional Services",
+                    "date": "2025-04-07 06:13:29"
+                },
+                {
+                    "type": "invoice",
+                    "amount": 11800.0,
+                    "reason": "Professional Services",
+                    "date": "2025-04-07 06:14:19"
+                },
+                {
+                    "type": "invoice",
+                    "amount": 11800.0,
+                    "reason": "Professional Services",
+                    "date": "2025-04-07 06:15:00"
+                },
+                {
+                    "type": "invoice",
+                    "amount": 11800.0,
+                    "reason": "Professional Services",
+                    "date": "2025-04-07 06:15:12"
+                },
+                {
+                    "type": "invoice",
+                    "amount": 11800.0,
+                    "reason": "Services",
+                    "date": "2025-04-07 08:51:12"
+                },
+                {
+                    "type": "invoice",
+                    "amount": 11800.0,
+                    "reason": "Services",
+                    "date": "2025-04-08 18:37:20"
+                }
+            ],
+            "balance": 118000.0
+        },
+        "Prashant Shah": {
+            "entries": [
+                {
+                    "type": "invoice",
+                    "amount": 17700.0,
+                    "reason": "Multiple items",
+                    "date": "2025-04-07 06:34:20"
+                },
+                {
+                    "type": "invoice",
+                    "amount": 0.0,
+                    "reason": "Review of an application",
+                    "date": "2025-04-07 09:08:14"
+                }
+            ],
+            "balance": 17700.0
+        },
+        "Rahul Patel": {
+            "entries": [
+                {
+                    "type": "invoice",
+                    "amount": 17700.0,
+                    "reason": "Professional Services",
+                    "date": "2025-04-07 07:50:08"
+                }
+            ],
+            "balance": 17700.0
+        },
+        "Bharat": {
+            "entries": [
+                {
+                    "type": "invoice",
+                    "amount": -29000.0,
+                    "reason": "Salary",
+                    "date": "2025-03-13 00:00:00"
+                }
+            ],
+            "balance": -29000.0
+        },
+        "XYZ Ltd for website work": {
+            "entries": [
+                {
+                    "type": "payment",
+                    "amount": 20000.0,
+                    "reason": "website work",
+                    "date": "2025-04-07 07:52:24"
+                },
+                {
+                    "type": "payment",
+                    "amount": 20000.0,
+                    "reason": "website work\"",
+                    "date": "2025-04-12 17:41:14"
+                },
+                {
+                    "type": "payment",
+                    "amount": 20000.0,
+                    "reason": "website work\"",
+                    "date": "2025-04-12 17:41:18"
+                },
+                {
+                    "type": "payment",
+                    "amount": 20000.0,
+                    "reason": "website work\"",
+                    "date": "2025-04-12 17:41:19"
+                },
+                {
+                    "type": "payment",
+                    "amount": 20000.0,
+                    "reason": "website work\"",
+                    "date": "2025-04-12 17:42:07"
+                }
+            ],
+            "balance": -100000.0
+        },
+        "Travel Agency": {
+            "entries": [
+                {
+                    "type": "invoice",
+                    "amount": -14560.0,
+                    "reason": "Travel",
+                    "date": "2025-02-02 00:00:00"
+                }
+            ],
+            "balance": -14560.0
+        },
+        "StarGazer": {
+            "entries": [
+                {
+                    "type": "invoice",
+                    "amount": 11800.0,
+                    "reason": "Website design",
+                    "date": "2025-04-07 08:36:29"
+                }
+            ],
+            "balance": 11800.0
+        },
+        "Joyus": {
+            "entries": [
+                {
+                    "type": "invoice",
+                    "amount": -12000.0,
+                    "reason": "Stationary",
+                    "date": "2025-04-07 00:00:00"
+                }
+            ],
+            "balance": -12000.0
+        },
+        "YOYO": {
+            "entries": [
+                {
+                    "type": "invoice",
+                    "amount": 17700.0,
+                    "reason": "Professional Services",
+                    "date": "2025-04-07 08:51:55"
+                }
+            ],
+            "balance": 17700.0
+        },
+        "invoice for mocktro": {
+            "entries": [
+                {
+                    "type": "invoice",
+                    "amount": 17700.0,
+                    "reason": "graphics work",
+                    "date": "2025-04-07 09:02:24"
+                }
+            ],
+            "balance": 17700.0
+        },
+        "Sonakshi": {
+            "entries": [
+                {
+                    "type": "invoice",
+                    "amount": 17700.0,
+                    "reason": "reels",
+                    "date": "2025-04-07 09:30:03"
+                }
+            ],
+            "balance": 17700.0
+        },
+        "Shorts": {
+            "entries": [
+                {
+                    "type": "invoice",
+                    "amount": 4720.0,
+                    "reason": "shorts",
+                    "date": "2025-04-07 09:50:51"
+                }
+            ],
+            "balance": 4720.0
+        },
+        "Diya Bassi": {
+            "entries": [
+                {
+                    "type": "invoice",
+                    "amount": 11800.0,
+                    "reason": "colaboration",
+                    "date": "2025-04-07 09:54:58"
+                }
+            ],
+            "balance": 11800.0
+        },
+        "JI": {
+            "entries": [
+                {
+                    "type": "payment",
+                    "amount": 50000.0,
+                    "reason": "Purchase",
+                    "date": "2025-04-05 00:00:00"
+                }
+            ],
+            "balance": -50000.0
+        },
+        "Trifecta starlight": {
+            "entries": [
+                {
+                    "type": "invoice",
+                    "amount": -35000.0,
+                    "reason": "Rent",
+                    "date": "2025-04-08 00:00:00"
+                }
+            ],
+            "balance": -35000.0
+        },
+        "Suhana masala yesterday": {
+            "entries": [
+                {
+                    "type": "payment",
+                    "amount": 72820.0,
+                    "reason": "payment",
+                    "date": "2025-04-08 17:53:20"
+                }
+            ],
+            "balance": -72820.0
+        },
+        "Hindustan Unilever Ltd on": {
+            "entries": [
+                {
+                    "type": "payment",
+                    "amount": 1078780.0,
+                    "reason": "payment",
+                    "date": "2025-04-08 17:54:06"
+                }
+            ],
+            "balance": -1078780.0
+        },
+        "paid": {
+            "entries": [
+                {
+                    "type": "invoice",
+                    "amount": -1450.0,
+                    "reason": "snacks at metro wholesale",
+                    "date": "2025-04-08 17:54:37"
+                }
+            ],
+            "balance": -1450.0
+        },
+        "The invoice is for \u201cSuhana Masala Pvt ltd\u201d": {
+            "entries": [
+                {
+                    "type": "invoice",
+                    "amount": 53100.0,
+                    "reason": "Consulting Services",
+                    "date": "2025-04-08 17:57:31"
+                }
+            ],
+            "balance": 53100.0
+        },
+        "Yugal": {
+            "entries": [
+                {
+                    "type": "invoice",
+                    "amount": 5900.0,
+                    "reason": "Design",
+                    "date": "2025-04-09 06:07:36"
+                }
+            ],
+            "balance": 5900.0
+        },
+        "ABC": {
+            "entries": [
+                {
+                    "type": "invoice",
+                    "amount": 17700.0,
+                    "reason": "Professional Services",
+                    "date": "2025-04-09 15:32:28"
+                }
+            ],
+            "balance": 17700.0
+        },
+        "Prashant": {
+            "entries": [
+                {
+                    "type": "invoice",
+                    "amount": -1500.0,
+                    "reason": "Personal",
+                    "date": "2025-04-09 00:00:00"
+                }
+            ],
+            "balance": -1500.0
+        },
+        "Krunal Shah": {
+            "entries": [
+                {
+                    "type": "payment",
+                    "amount": 51000.0,
+                    "reason": "Purchase",
+                    "date": "2025-04-12 00:00:00"
+                },
+                {
+                    "type": "invoice",
+                    "amount": 60180.0,
+                    "reason": "Fabric",
+                    "date": "2025-04-12 17:44:50"
+                },
+                {
+                    "type": "payment",
+                    "amount": 9180.0,
+                    "reason": "Invoice",
+                    "date": "2025-04-12 00:00:00"
+                }
+            ],
+            "balance": 0.0
+        }
+    }
+}

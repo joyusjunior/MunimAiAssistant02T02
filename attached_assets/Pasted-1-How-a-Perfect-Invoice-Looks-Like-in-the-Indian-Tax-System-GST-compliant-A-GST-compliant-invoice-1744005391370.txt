@@ -1,0 +1,114 @@
+1. How a Perfect Invoice Looks Like in the Indian Tax System (GST-compliant)
+A GST-compliant invoice in India must include the following mandatory fields:
+
+A. Seller Details:
+Business Name
+
+GSTIN (GST Number)
+
+Address
+
+Contact Information
+
+B. Buyer Details:
+Name
+
+GSTIN (if registered)
+
+Address
+
+C. Invoice Details:
+Invoice Number (unique & sequential)
+
+Invoice Date
+
+Place of Supply
+
+Due Date (optional but preferred)
+
+Reverse Charge (Yes/No)
+
+D. Item Details (for each line item):
+Description of Goods/Services
+
+HSN/SAC Code
+
+Quantity
+
+Unit
+
+Rate per unit
+
+Total taxable value
+
+Discount (if any)
+
+Taxable value after discount
+
+GST Rate (CGST + SGST or IGST)
+
+CGST amount
+
+SGST amount
+
+IGST amount
+
+E. Summary Totals:
+Total Taxable Value
+
+Total GST (CGST + SGST + IGST)
+
+Grand Total (Invoice Value)
+
+Amount in Words
+
+F. Other Optional But Professional Elements:
+Bank Account Details (for payments)
+
+Terms & Conditions
+
+Authorized Signatory with digital signature or name
+
+QR Code (recommended for B2B invoices above ₹500 crores turnover)
+
+✅ 2. Flaws & Feedback for the Prototype Chatbot
+🔗 Prototype link
+
+Here’s what Munim AI needs to improve:
+
+🟠 A. Get User Inputs (Missing or Incomplete):
+It should ask the user for all mandatory invoice fields, especially:
+
+Buyer GSTIN
+
+Place of supply (important for deciding IGST or SGST/CGST)
+
+HSN/SAC code
+
+Quantity & Rate for line items
+
+GST rate selection
+
+✅ Suggestion: Use a sequential Q&A flow or form to collect these details before generating the invoice. Don't assume fixed values.
+
+❌ 3. Download Option Not Working
+Your current prototype has a non-functional “Download” button — clicking it doesn’t download the invoice.
+
+✅ Fix Suggestion:
+Ensure that the invoice is converted to a PDF format before download.
+
+Use a library like jsPDF or html2pdf in the frontend to export HTML as PDF.
+
+For backend-generated invoices, set correct headers:
+
+http
+Copy
+Edit
+Content-Disposition: attachment; filename="invoice.pdf"
+Content-Type: application/pdf
+✅ What to Say to the Chatbot Developers:
+You can relay this short message to the dev team:
+
+Message to Devs:
+
+The chatbot is working decently but needs to collect more user input to generate proper invoices. It must ask for GSTIN, place of supply, HSN/SAC, quantity, rate, and GST % at a minimum. Also, the download feature is broken—please ensure the invoice is generated as a downloadable PDF, either via frontend tools (like jsPDF) or backend with correct headers.
