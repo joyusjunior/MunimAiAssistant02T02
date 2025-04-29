@@ -1,9 +1,15 @@
 {% extends "base.html" %}
-
 {% block content %}
 <div class="container mt-4">
-    <h1>Welcome, {{ user.name }}!</h1>
-    <p>Your Google Drive folder is ready: <strong>{{ folder.name }}</strong></p>
-    <a href="/logout" class="btn btn-danger">Logout</a>
+    {% if user %}
+        <h1>Welcome, {{ user.name }}!</h1>
+        <p>Your email: {{ user.email }}</p>
+        <p>Your unique folder ID: {{ user.id }}</p>
+        <a href="/logout" class="btn btn-danger">Logout</a>
+    {% else %}
+        <div class="alert alert-warning">
+            Not logged in. <a href="/login">Login here</a>
+        </div>
+    {% endif %}
 </div>
 {% endblock %}
