@@ -53,9 +53,26 @@ def login():
 
 @app.route('/callback')
 def callback():
+    # Debug: Print the incoming request URL
+    print(f"Incoming callback URL: {request.url}")
+    
+    # Check for errors first
+    if 'error' in request.args:
+        return f"OAuth error: {request.args.get('error')}"
+    
+    # Verify the state parameter
+    if request.args.get('state') != session.get('state'):
+        return "State mismatch", 400
+    
+    # Ensure code exists
+    if 'code' not in request.args:
+        return "Missing authorization code", 400
+    
     try:
+        # Exchange code for tokens
         flow.fetch_token(authorization_response=request.url)
         
+        # Rest of your callback logic...
         credentials = flow.credentials
         session['credentials'] = {
             'token': credentials.token,
@@ -74,6 +91,7 @@ def callback():
         }
         
         return redirect(url_for('dashboard'))
+        
     except Exception as e:
         print(f"Callback error: {str(e)}")
         return redirect(url_for('home'))
