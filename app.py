@@ -1,9 +1,7 @@
 import os
-from flask import Flask, render_template, redirect, url_for, session, request
-from flask_login import LoginManager, UserMixin, login_user, logout_user, login_required
-from google.oauth2 import id_token
+from flask import Flask, redirect, url_for, session, request, render_template
+from flask_login import LoginManager, UserMixin, login_user, current_user
 from google_auth_oauthlib.flow import Flow
-from google.auth.transport import requests
 from googleapiclient.discovery import build
 from dotenv import load_dotenv
 
@@ -21,90 +19,71 @@ class User(UserMixin):
         self.id = id_
         self.email = email
 
-# Google OAuth
+# OAuth Config
+os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1'  # Remove in production!
 GOOGLE_CLIENT_ID = os.environ.get('GOOGLE_CLIENT_ID')
+client_secrets_path = 'client_secret.json'
+
 flow = Flow.from_client_secrets_file(
-    'client_secret.json',
-    scopes=['openid', 'https://www.googleapis.com/auth/userinfo.email', 'https://www.googleapis.com/auth/drive.file'],
-    redirect_uri='https://munimaiassistant02t02.onrender.com'  # Change to Render URL when deploying
+    client_secrets_file=client_secrets_path,
+    scopes=[
+        'openid',
+        'https://www.googleapis.com/auth/userinfo.email',
+        'https://www.googleapis.com/auth/drive.file'
+    ],
+    redirect_uri='https://munimaiassistant02t02.onrender.com/callback'
 )
 
 @login_manager.user_loader
 def load_user(user_id):
-    return User(session['user']['id'], session['user']['email'])
+    return User(session.get('user')['id'], session.get('user')['email'])
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    return render_template('index.html', user=current_user)
 
 @app.route('/login')
 def login():
-    auth_url, _ = flow.authorization_url(prompt='consent')
-    return redirect(auth_url)
+    authorization_url, state = flow.authorization_url(
+        access_type='offline',
+        include_granted_scopes='true'
+    )
+    session['state'] = state
+    return redirect(authorization_url)
 
 @app.route('/callback')
 def callback():
-    # Get the authorization code Google sent back
-    code = request.args.get('code')
-    
-    # Fetch tokens using the code
-    flow.fetch_token(authorization_response=request.url)
-    
-    # Get credentials
-    credentials = flow.credentials
-    
-    # Store credentials in session
-    session['credentials'] = {
-        'token': credentials.token,
-        'refresh_token': credentials.refresh_token,
-        'token_uri': credentials.token_uri,
-        'client_id': credentials.client_id,
-        'client_secret': credentials.client_secret,
-        'scopes': credentials.scopes
-    }
+    try:
+        flow.fetch_token(authorization_response=request.url)
+        
+        credentials = flow.credentials
+        session['credentials'] = {
+            'token': credentials.token,
+            'refresh_token': credentials.refresh_token,
+            'token_uri': credentials.token_uri,
+            'scopes': credentials.scopes
+        }
 
-    # Get user info
-    userinfo_service = build('oauth2', 'v2', credentials=credentials)
-    userinfo = userinfo_service.userinfo().get().execute()
-    
-    # Create user session
-    user = User(id_=userinfo['id'], email=userinfo['email'])
-    login_user(user)
-    session['user'] = {
-        'id': userinfo['id'],
-        'email': userinfo['email'],
-        'name': userinfo.get('name', '')
-    }
-    
-    return redirect(url_for('dashboard'))
+        userinfo = build('oauth2', 'v2', credentials=credentials).userinfo().get().execute()
+        user = User(userinfo['id'], userinfo['email'])
+        login_user(user)
+        session['user'] = {
+            'id': userinfo['id'],
+            'email': userinfo['email'],
+            'name': userinfo.get('name', '')
+        }
+        
+        return redirect(url_for('dashboard'))
+    except Exception as e:
+        print(f"Callback error: {str(e)}")
+        return redirect(url_for('home'))
+
 @app.route('/dashboard')
-@login_required
 def dashboard():
-    credentials = google.oauth2.credentials.Credentials(**session['credentials'])
-    drive_service = build('drive', 'v3', credentials=credentials)
+    if not current_user.is_authenticated:
+        return redirect(url_for('login'))
     
-    # Create a folder for the user (if it doesn't exist)
-    folder_name = f"MunimAI_{session['user']['id']}"
-    folders = drive_service.files().list(
-        q=f"name='{folder_name}' and mimeType='application/vnd.google-apps.folder'",
-        spaces='drive'
-    ).execute().get('files', [])
-    
-    if not folders:
-        folder = drive_service.files().create(body={
-            'name': folder_name,
-            'mimeType': 'application/vnd.google-apps.folder'
-        }).execute()
-    else:
-        folder = folders[0]
-    
-    return render_template('dashboard.html', user=session['user'], folder=folder)
-
-@app.route('/logout')
-def logout():
-    logout_user()
-    session.clear()
-    return redirect(url_for('home'))
+    return render_template('dashboard.html', user=session['user'])
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(ssl_context='adhoc')
