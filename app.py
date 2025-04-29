@@ -20,7 +20,7 @@ class User(UserMixin):
         self.email = email
 
 # OAuth Config
-os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1'  # Remove in production!
+os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1'  # Remove in production
 GOOGLE_CLIENT_ID = os.environ.get('GOOGLE_CLIENT_ID')
 client_secrets_path = 'client_secret.json'
 
@@ -45,42 +45,24 @@ def home():
 @app.route('/login')
 def login():
     authorization_url, state = flow.authorization_url(
-        access_type='offline',
-        include_granted_scopes='true'
+        prompt='consent',
+        access_type='offline'
     )
     session['state'] = state
     return redirect(authorization_url)
 
 @app.route('/callback')
 def callback():
-    # Debug: Print the incoming request URL
-    print(f"Incoming callback URL: {request.url}")
-    
-    # Check for errors first
     if 'error' in request.args:
-        return f"OAuth error: {request.args.get('error')}"
-    
-    # Verify the state parameter
+        return f"Error: {request.args.get('error')}"
+
     if request.args.get('state') != session.get('state'):
         return "State mismatch", 400
-    
-    # Ensure code exists
-    if 'code' not in request.args:
-        return "Missing authorization code", 400
-    
-    try:
-        # Exchange code for tokens
-        flow.fetch_token(authorization_response=request.url)
-        
-        # Rest of your callback logic...
-        credentials = flow.credentials
-        session['credentials'] = {
-            'token': credentials.token,
-            'refresh_token': credentials.refresh_token,
-            'token_uri': credentials.token_uri,
-            'scopes': credentials.scopes
-        }
 
+    try:
+        flow.fetch_token(authorization_response=request.url)
+        credentials = flow.credentials
+        
         userinfo = build('oauth2', 'v2', credentials=credentials).userinfo().get().execute()
         user = User(userinfo['id'], userinfo['email'])
         login_user(user)
@@ -89,18 +71,16 @@ def callback():
             'email': userinfo['email'],
             'name': userinfo.get('name', '')
         }
-        
         return redirect(url_for('dashboard'))
         
     except Exception as e:
         print(f"Callback error: {str(e)}")
-        return redirect(url_for('home'))
+        return "Login failed", 400
 
 @app.route('/dashboard')
 def dashboard():
     if not current_user.is_authenticated:
         return redirect(url_for('login'))
-    
     return render_template('dashboard.html', user=session['user'])
 
 if __name__ == '__main__':
