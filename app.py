@@ -26,7 +26,7 @@ GOOGLE_CLIENT_ID = os.environ.get('GOOGLE_CLIENT_ID')
 flow = Flow.from_client_secrets_file(
     'client_secret.json',
     scopes=['openid', 'https://www.googleapis.com/auth/userinfo.email', 'https://www.googleapis.com/auth/drive.file'],
-    redirect_uri='http://localhost:5000/callback'  # Change to Render URL when deploying
+    redirect_uri='https://munimaiassistant02t02.onrender.com'  # Change to Render URL when deploying
 )
 
 @login_manager.user_loader
