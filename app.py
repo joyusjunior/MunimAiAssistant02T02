@@ -44,8 +44,16 @@ def login():
 
 @app.route('/callback')
 def callback():
+    # Get the authorization code Google sent back
+    code = request.args.get('code')
+    
+    # Fetch tokens using the code
     flow.fetch_token(authorization_response=request.url)
+    
+    # Get credentials
     credentials = flow.credentials
+    
+    # Store credentials in session
     session['credentials'] = {
         'token': credentials.token,
         'refresh_token': credentials.refresh_token,
@@ -55,13 +63,20 @@ def callback():
         'scopes': credentials.scopes
     }
 
-    userinfo = build('oauth2', 'v2', credentials=credentials).userinfo().get().execute()
+    # Get user info
+    userinfo_service = build('oauth2', 'v2', credentials=credentials)
+    userinfo = userinfo_service.userinfo().get().execute()
+    
+    # Create user session
     user = User(id_=userinfo['id'], email=userinfo['email'])
     login_user(user)
-    session['user'] = {'id': userinfo['id'], 'email': userinfo['email'], 'name': userinfo.get('name', '')}
+    session['user'] = {
+        'id': userinfo['id'],
+        'email': userinfo['email'],
+        'name': userinfo.get('name', '')
+    }
     
     return redirect(url_for('dashboard'))
-
 @app.route('/dashboard')
 @login_required
 def dashboard():
